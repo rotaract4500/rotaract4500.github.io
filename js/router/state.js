@@ -12,11 +12,8 @@ app.config(function($stateProvider, $urlRouterProvider, $httpProvider) {
       .state('home', {
         url: '/',
         title: 'Rotaract 4500 - Página Inicial',
-        templateUrl: 'teste.html',
-        controller: 'HomeController'
+        templateUrl: 'home.html'
       });
-
-
 
 
   })
