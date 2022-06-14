@@ -13,6 +13,12 @@ app.config(function($stateProvider, $urlRouterProvider, $httpProvider) {
         url: '/',
         title: 'Rotaract 4500 - Página Inicial',
         templateUrl: 'home.html'
+      })
+
+      .state('sobre', {
+        url: '/sobre',
+        title: 'Rotaract 4500 - Sobre',
+        templateUrl: 'sobre.html'
       });
 
 
