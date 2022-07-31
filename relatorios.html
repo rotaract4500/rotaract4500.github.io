@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <title>Envio de relatorios rotaract 4500</title>
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta content="" name="keywords">
+        <meta content="" name="description">
+
+        <!-- Favicon -->
+        <link href="img/favicon.ico" rel="icon">
+
+        <!-- Google Web Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Roboto:wght@500;700&display=swap" rel="stylesheet">
+
+        <!-- Icon Font Stylesheet -->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+        <!-- Libraries Stylesheet -->
+        <link href="lib/animate/animate.min.css" rel="stylesheet">
+        <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+        <!-- Customized Bootstrap Stylesheet -->
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- Template Stylesheet -->
+        <link href="css/style.css" rel="stylesheet">
+    </head>
+
+    <body>
+        <!-- Spinner Start -->
+        <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+            <div class="spinner-grow text-primary" style="width: 3rem; height: 3rem;" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
+        </div>
+        <!-- Spinner End -->
+
+
+        <!-- Navbar Start -->
+        <nav class="navbar navbar-expand-lg bg-white navbar-light shadow border-top border-warning border-5 border-sticky-top p-0">
+            <a href="index.html">
+                <img class="mb-2 navbar-brand d-flex align-items-center px-4 px-lg-5" src="img/logo.png" alt="">
+            </a>
+            <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <div class="navbar-nav ms-auto p-4 p-lg-0">
+                    <div class="nav-item dropdown">
+                        <a href="#" class="text-warning nav-link dropdown-toggle" data-bs-toggle="dropdown">Relatórios</a>
+                        <div class="dropdown-menu fade-up m-0">
+                        <a href="relatorios.html" class="text-warning dropdown-item active bg-light">Envio de Relatórios</a>
+                    </div>
+                </div>
+
+                <a href="index.html" class="nav-item nav-link active text-warning">Página Inicial</a>
+            </div>
+        </nav>
+        <!-- Navbar End -->
+
+
+        <!-- Page Header Start -->
+        <div class="container-fluid page-header py-5" style="margin-bottom: 6rem;">
+            <div class="container py-5">
+                <h1 class="display-3 text-white mb-3 animated slideInDown">Envio de relatórios</h1>
+                <nav aria-label="breadcrumb animated slideInDown">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a class="text-white" href="index.html">Home</a></li>
+                        <li class="breadcrumb-item text-white active" aria-current="page">Envio de relatórios</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+        <!-- Page Header End -->
+
+
+        <!-- Relatórios -->
+
+        <h4 class="text-center text-dark">Formulário de envio dos relatórios mensais</h4>
+
+        <div class="container col-md-8" style="margin-bottom: 120px;">
+            <div class="bg-light text-center p-5 wow fadeIn" data-wow-delay="0.5s">
+                <form>
+                    <div class="row g-3">
+                        <div class="col-12 col-sm-6">
+                            <input type="text" id="Clube" name="clube" class="form-control border-0" placeholder="Digite o seu clube" style="height: 55px;">
+                        </div>
+                        <div class="col-12 col-sm-6">
+                            <input class="form-control border-0" type="text" id="Cidade" name="cidade" placeholder="Digite a cidade do seu clube" style="height: 55px;">
+                        </div>
+                        <div class="col-12 col-sm-6">
+                            <select class="form-select border-0" style="height: 55px;" id="Estado" name="estado" required>
+                                <option disabled selected value="">Selecione seu estado</option>
+                                <option value="PB">Paraíba</option>
+                                <option value="PE">Pernambuco</option>
+                                <option value="RN">Rio Grande do Norte</option>
+                            </select>                
+                        </div>
+                        <div class="col-12 col-sm-6">
+                            <select class="form-select border-0" style="height: 55px;" id="Mês" name="mês" required >
+                                <option disabled selected value="">Selecione o mês do relatório</option>
+                                <option value="Janeiro/2023">Janeiro/2023</option>
+                                <option value="Fevereiro/2023">Fevereiro/2023</option>
+                                <option value="Março/2023">Março/2023</option>
+                                <option value="Abril/2023">Abril/2023</option>
+                                <option value="Maio/2023">Maio/2023</option>
+                                <option value="Junho/2023">Junho/2023</option>
+                                <option value="Julho/2022">Julho/2022</option>
+                                <option value="Agosto/2022">Agosto/2022</option>
+                                <option value="Setembro/2022">Setembro/2022</option>
+                                <option value="Outubro/2022">Outubro/2022</option>
+                                <option value="Novembro/2022">Novembro/2022</option>
+                                <option value="Dezembro/2022">Dezembro/2022</option>
+                            </select>
+                        </div>
+                        
+
+                        <!-- ********** -->
+
+                        <div class="col-12 col-sm-6">
+                            <label for="Secretaria_descricao_atividades">Secretaria - Descrição das atividades</label>
+                            <textarea  class="form-control border-0" id = "Secretaria_descricao_atividades" name="secretaria_descricao_atividades" placeholder= "Digite o relatório"  rows="6" cols="115" >
+                            </textarea>
+                        </div>
+                    
+                        <div class="col-12 col-sm-6">
+                            <label for="Secreria_palavras_diretor">Secretaria - Palavras do diretor</label>
+                            <textarea  class="form-control border-0" id="Secretaria_palavras_diretor" name="secretaria_palavras_diretor" placeholder="Digite o relatório" rows="6" cols="115">
+                            </textarea>
+                        </div>
+                    
+                        <div class="col-12 col-sm-6">
+                            <label for="Secretaria_numeros_atas_confeccionadas">Secretaria - Número de atas confeccionadas</label>
+                            <input type="number" class="form-control border-0" id="Secretaria_numero_atas_confeccionadas" name="secretaria_numero_atas_confeccionadas" placeholder="Digite o número de atas">
+                        </div>
+                    
+                        <div class="col-12 col-sm-6">
+                            <label for="Secretaria_percentual_diretores_relatorios">Secretaria - Percentual de relatórios dos diretores</label>
+                            <input class="form-control border-0" type="text" id="Secretaria_percentual_diretores_relatorios" name="secretaria_percentual_diretores_relatorios" placeholde="Digite o relatório">
+                        </div>
+                    
+                        <div class="col-12 col-sm-6">
+                            <label for="Secretaria_cadastro_mdio_atualizado">Secretaria - Cadastro MDIO atualizado</label>
+                            <textarea class="form-control border-0" id="Secretaria_cadastro_mdio_atualizado" name="secretaria_cadastro_mdio_atualizado" placeholder="Digite o relatório" rows="6" cols="115">
+                            </textarea>
+                        </div>
+                        
+                        <!-- ********** -->
+                    
+                        <!-- TESOURARIA -->
+                        <div class="col-12 col-sm-6">
+                            <label for="Tesouraria_descricao_atividades">Tesouraria - Descrição das atividades</label>
+                            <textarea class="form-control border-0" id="Tesouraria_descricao_atividades" name="tesouraria_descricao_atividades" placeholder="Digite o relatório" rows="6" cols="115">
+                            </textarea>
+                        </div>
+                    
+                        
+                    
+                        <div class="col-12 col-sm-6">
+                            <label for="Tesouraria_entradas">Tesouraria - Entradas</label>
+                            <input  class="form-control border-0" type="number" id="Tesouraria_entradas" name="tesouraria_entradas" placeholder="Digite o número de entradas" >
+                        </div>
+                    
+                        <div class="col-12 col-sm-6">
+                            <label for="Tesouraria_saidas">Tesouraria - Saídas</label>
+                            <input  class="form-control border-0" type="number" id="Tesouraria_saidas" name="tesouraria_saidas" placeholder="Digite o número de saídas" >
+                        </div>
+                    
+                        <div class="col-12 col-sm-6">
+                            <label for="Tesouraria_saldo_obtido_mes">Tesouraria - Saldo obtido no mês</label>
+                            <input  class="form-control border-0" type="number" id="Tesouraria_saldo_obtido_mes" name="tesouraria_saldo_obtido_mes" placeholder="Digite o saldo do mês" >
+                        </div>
+                    
+                        <div class="col-12 col-sm-6">
+                            <label for="Tesouraria_link_drive_comprovantes">Tesouraria - Link do drive dos comprovantes</label>
+                            <input  class="form-control border-0" type="url" id="Tesouraria_link_drive_comprovantes" name="tesouraria_link_drive_comprovantes" placeholder="Digite o Link" >
+                        </div>
+                        <div class="col-12 col-sm-6">
+                            <label for="Tesouraria_palavras_diretor">Tesouraria - Palavras do diretor</label>
+                            <textarea  class="form-control border-0" id="Tesouraria_palavras_diretor" name="tesouraria_palavras_diretor" placeholder="Digite o relatório" rows="6" cols="115">
+                            </textarea>
+                        </div>
+                    
+                        <!-- ********** -->
+                    
+                        <!--ADMINISTRAÇÃO-->
+                        <div class="col-12 col-sm-6">
+                            <label for="Administracao_descricao_atividades">Administração - Descrição das atividades</label>
+                            <textarea  class="form-control border-0" id="Administracao_descricao_atividades" name="administracao_descricao_atividades" placeholder="Digite o relatório" rows="6" cols="115">
+                            </textarea>
+                        </div>
+                    
+                        <div class="col-12 col-sm-6">
+                            <label for="Administracao_palavras_diretor">Administração - Palavras do diretor</label>
+                            <textarea  class="form-control border-0" id="Administracao_palavras_diretor" name="administracao_palavras_diretor" placeholder="Digite o relatório" rows="6" cols="115">
+                            </textarea>
+                        </div>
+                    
+                        <div class="col-12 col-sm-6">
+                            <label for="Administracao_numero_reunioes">Administração - Número de reuniões</label>
+                            <input  class="form-control border-0" type="number" id="Administracao_numero_reunioes" name="administracao_numero_reunioes" placeholder="Digite o número de reuniões" >
+                        </div>
+                    
+                        <div class="col-12 col-sm-6">
+                            <label for="Administracao_frequencia_mensal">Administração - Frequência mensal</label>
+                            <input  class="form-control border-0" type="number" id="Administracao_frequencia_mensal" name="administracao_frequencia_mensal" placeholder="Digite a frequência mensal" >
+                        </div>
+                    
+                        <div class="col-12 col-sm-6">
+                            <label for="Administracao_porcentagem_frequencia_baixa">Administração - Porcentagem de frequência baixa</label>
+                            <input class="form-control border-0" type="number" id="Administracao_porcentagem_frequencia_baixa" name="administracao_porcentagem_frequencia_baixa" placeholder="Digite a porcentagem" >
+                        </div>
+                    
+                        <div class="col-12 col-sm-6">
+                            <label for="Administracao_companheirismos">Administração - Companheirismos</label>
+                            <textarea  class="form-control border-0" id="Administracao_companheirismos" name="administracao_companheirismos" placeholder="Digite o relatório" rows="6" cols="115">
+                            </textarea>
+                        </div>
+                    
+                        <!-- ********** -->
+                    
+                        <!--DQA-->
+                        <div class="col-12 col-sm-6">
+                            <label for="Dqa_descricao_atividades">DQA - Descrição das atividades</label>
+                            <textarea  class="form-control border-0" id="Dqa_descricao_atividades" name="dqa_descricao_atividades" placeholder="Digite o relatório" rows="6" cols="115">
+                            </textarea>
+                        </div>
+                    
+                        <div class="col-12 col-sm-6">
+                            <label for="Dqa_palavras_diretor">DQA - Palavras do diretor</label>
+                            <textarea  class="form-control border-0" id="Dqa_palavras_diretor" name="dqa_palavras_diretor" placeholder="Digite o relatório" rows="6" cols="115">
+                            </textarea>
+                        </div>
+                    
+                        <div class="col-12 col-sm-6">
+                            <label for="Dqa_numero_associados">DQA - Número de associados</label>
+                            <input  class="form-control border-0" type="number" id="Dqa_numero_associados" name="dqa_numero_associados" placeholder="Digite o numero" >
+                        </div>
+                    
+                        <div class="col-12 col-sm-6">
+                            <label for="Dqa_associados_afastados">DQA - Assosciados afastados</label>
+                            <textarea class="form-control border-0" id="Dqa_associados_afastados" name="dqa_associados_afastados" placeholder="Digite o relatório" rows="6" cols="115">
+                            </textarea>
+                        </div>
+                    
+                        <div class="col-12 col-sm-6">
+                            <label for="Dqa_empossados_mes">DQA - Empossados do mês</label>
+                            <textarea class="form-control border-0" id="Dqa_empossados_mes" name="dqa_empossados_mes" placeholder="Digite o relatório" rows="6" cols="115">
+                            </textarea>
+                        </div>
+                    
+                        <div class="col-12 col-sm-6">
+                            <label for="Dqa_afastados_mes">DQA - Afastados do mês</label>
+                            <textarea class="form-control border-0" id="Dqa_afastados_mes" name="dqa_afastados_mes" placeholder="Digite o relatório" rows="6" cols="115">
+                            </textarea>
+                        </div>
+                    
+                        <div class="col-12 col-sm-6">
+                            <label for="Dqa_associados_desligados">DQA - Associados desligados</label>
+                            <textarea  class="form-control border-0" id="Dqa_associados_desligados" name="dqa_associados_desligados" placeholder="Digite o relatório" rows="6" cols="115">
+                            </textarea>
+                        </div>
+                    
+                        <!-- ********** -->
+                    
+                        <!--IP-->
+                        <div class="col-12 col-sm-6">
+                            <label for="Ip_descricao_atividades">IP - Descrição das atividades</label>
+                            <textarea  class="form-control border-0" id="Ip_descricao_atividades" name="ip_descricao_atividades" placeholder="Digite o relatório" rows="6" cols="115">
+                            </textarea>
+                        </div class="col-12 col-sm-6">
+                    
+                        <div class="col-12 col-sm-6">
+                            <label for="Ip_palavras_diretor">IP - Palavras do diretor</label>
+                            <textarea  class="form-control border-0" id="Ip_palavras_diretor" name="ip_palavras_diretor" placeholder="Digite o relatório" rows="6" cols="115">
+                            </textarea>
+                        </div>
+                    
+                        <div class="col-12 col-sm-6">
+                            <label for="Ip_links_importantes">IP - Links importantes</label>
+                            <textarea  class="form-control border-0" id="Ip_links_importantes" name="ip_links_importantes" placeholder="Digite os links" rows="6" cols="115">
+                            </textarea>
+                        </div>
+                    
+                        <!-- ********** -->
+                    
+                        <!--PH-->
+                        <div class="col-12 col-sm-6">
+                            <label for="Ph_descricao_atividades">PH - Descrição das atividades</label>
+                            <textarea  class="form-control border-0" id="Ph_descricao_atividades" name="ph_descricao_atividades" placeholder="Digite o relatório" rows="6" cols="115">
+                            </textarea>
+                        </div>
+                    
+                        <div class="col-12 col-sm-6">
+                            <label for="Ph_palavras_diretor">PH - Palavras do diretor</label>
+                            <textarea  class="form-control border-0" id="Ph_palavras_diretor" name="ph_palavras_diretor" placeholder="Digite o relatório" rows="6" cols="115">
+                            </textarea>
+                        </div>
+                    
+                        <div class="col-12 col-sm-6">
+                            <label for="Ph_planejamento_mes_seguinte">PH - Planejamento do mês seguinte</label>
+                            <textarea  class="form-control border-0" id="Ph_planejamento_mes_seguinte" name="ph_planejamento_mes_seguinte" placeholder="Digite o relatório" rows="6" cols="115">
+                            </textarea>
+                        </div>
+                    
+                        <!-- ********** -->
+                    
+                        <!--FR-->
+                        <div class="col-12 col-sm-6">
+                            <label for="Fr_descricao_atividades">FR - Descrição das atividades</label>
+                            <textarea  class="form-control border-0" id="Fr_descricao_atividades" name="fr_descricao_atividades" placeholder="Digite o relatório" rows="6" cols="115">
+                            </textarea>
+                        </div>
+                    
+                        <div class="col-12 col-sm-6">
+                            <label for="Fr_palavras_diretor">FR - Palavras do diretor</label>
+                            <textarea  class="form-control border-0" id="Fr_palavras_diretor" name="fr_palavras_diretor" placeholder="Digite o relatório" rows="6" cols="115">
+                            </textarea>
+                        </div>
+                    
+                        <div class="col-12 col-sm-6">
+                            <label for="Fr_tema_relacionado_no_mes">FR - Tema relacionado no mês</label>
+                            <textarea  class="form-control border-0" id="Fr_tema_relacionado_no_mes" name="fr_tema_relacionado_no_mes" placeholder="Digite o relatório" rows="6" cols="115">
+                            </textarea>
+                        </div>
+                    
+                        <!-- ********** -->
+                    
+                        <!--RI-->
+                        <div class="col-12 col-sm-6">
+                            <label for="Ri_descricao_atividades">RI - Descrição das atividades</label>
+                            <textarea class="form-control border-0" id="Ri_descricao_atividades" name="ri_descricao_atividades" placeholder="Digite o relatório" rows="6" cols="115">
+                            </textarea>
+                        </div>
+                    
+                        <div class="col-12 col-sm-6">
+                            <label for="Ri_palavras_diretor">RI - Palavras do diretor</label>
+                            <textarea  class="form-control border-0" id="Ri_palavras_diretor" name="ri_palavras_diretor" placeholder="Digite o relatório" rows="6" cols="115">
+                            </textarea>
+                        </div>
+                    
+                        <!-- ********** -->
+                    
+                        <!--VICEP-->
+                        <div class="col-12 col-sm-6">
+                            <label for="Vicep_palavras_diretor">VICEP - Palavras do diretor</label>
+                            <textarea  class="form-control border-0" id="Vicep_palavras_diretor" name="vicep_palavras_diretor" placeholder="Digite o relatório" rows="6" cols="115">
+                            </textarea>
+                        </div>
+                    
+                        <!-- ********** -->
+                    
+                        <!--PRESI-->
+                        <div class="col-12 col-sm-6">
+                            <label for="Presidencia_palavras_diretor">Presidência - Palavras do diretor</label>
+                            <textarea  class="form-control border-0" id="Presidencia_palavras_diretor" name="Presidencia_palavras_diretor" placeholder="Digite o relatório" rows="6" cols="115">
+                            </textarea>
+                        </div>
+                    
+                        <div class="col-12 col-sm-6">
+                            <label for="Presidencia_myrotary_atualizado">Presidência - Myrotary atualizado</label>
+                            <textarea  class="form-control border-0" id="Presidencia_myrotary_atualizado" name="presidencia_myrotary_atualizado" placeholder="Digite o relatório" rows="6" cols="115">
+                            </textarea>
+                        </div>
+                    
+                        <div class="col-12 col-sm-6">
+                            <label for="Presidencia_impressoes_trabalho_secretaria">Presidência - Impressões do trabalho da sercretaria</label>
+                            <textarea  class="form-control border-0" id="Presidencia_impressoes_trabalho_secretaria" name="presidencia_impressoes_trabalho_secretaria" placeholder="Digite o relatório" rows="6" cols="115">
+                            </textarea>
+                        </div>
+                    
+                        <div class="col-12 col-sm-6">
+                            <label for="Presidencia_impressoes_trabalho_tesouraria">Presidência - Impressões do trabalho da tesouraria</label>
+                            <textarea class="form-control border-0" id="Presidencia_impressoes_trabalho_tesouraria" name="presidencia_impressoes_trabalho_tesouraria" placeholder="Digite o relatório" rows="6" cols="115">
+                            </textarea>
+                        </div>
+                    
+                        <div class="col-12 col-sm-6">
+                            <label for="Presidencia_impressoes_trabalho_administracao">Presidência - Impressões do trabalho da administrção</label>
+                            <textarea  class="form-control border-0" id="Presidencia_impressoes_trabalho_administracao" name="presidencia_impressoes_trabalho_administracao" placeholder="Digite o relatório" rows="6" cols="115">
+                            </textarea>
+                        </div>
+                    
+                        <div class="col-12 col-sm-6">
+                            <label for="Presidencia_impressoes_trabalho_dqa">Presidência - Impressões do trabalho da DQA</label>
+                            <textarea  class="form-control border-0" id="Presidencia_impressoes_trabalho_dqa" name="presidencia_impressoes_trabalho_dqa" placeholder="Digite o relatório" rows="6" cols="115">
+                            </textarea>
+                        </div>
+                    
+                        <div class="col-12 col-sm-6">
+                            <label for="Presidencia_impressoes_trabalho_ip">Presidência - Impressões do trabalho da IP</label>
+                            <textarea  class="form-control border-0" id="Presidencia_impressoes_trabalho_ip" name="presidencia_impressoes_trabalho_ip" placeholder="Digite o relatório" rows="6" cols="115">
+                            </textarea>
+                        </div>
+                    
+                        <div class="col-12 col-sm-6">
+                            <label for="Presidencia_impressoes_trabalho_ph">Presidência - Impressões do trabalho da PH</label>
+                            <textarea class="form-control border-0" id="Presidencia_impressoes_trabalho_ph" name="presidencia_impressoes_trabalho_ph" placeholder="Digite o relatório" rows="6" cols="115">
+                            </textarea>
+                        </div>
+                    
+                        <div class="col-12 col-sm-6">
+                            <label for="Presidencia_impressoes_trabalho_fr">Presidência - Impressões do trabalho da FR</label>
+                            <textarea class="form-control border-0" id="Presidencia_impressoes_trabalho_fr" name="Presidencia_impressoes_trabalho_fr" placeholder="Digite o relatório" rows="6" cols="115">
+                            </textarea>
+                        </div>
+                    
+                        <div class="col-12 col-sm-6">
+                            <label for="Presidencia_impressoes_trabalho_ri">Presidência - Impressões do trabalho da RI</label>
+                            <textarea class="form-control border-0" id="Presidencia_impressoes_trabalho_ri" name="presidencia_impressoes_trabalho_ri" placeholder="Digite o relatório" rows="6" cols="115">
+                            </textarea>
+                        </div>
+                    
+                        <div class="col-12 col-sm-6">
+                            <label for="Presidencia_impressoes_trabalho_distrito">Presidência - Impressões do trabalho do distrito</label>
+                            <textarea  class="form-control border-0" id="Presidencia_impressoes_trabalho_distrito" name="presidencia_impressoes_trabalho_distrito" placeholder="Digite o relatório" rows="6" cols="115">
+                            </textarea>
+                        </div>
+                        <div class="col-12">
+                            <button class="btn btn-warning text-light w-100 py-3" type="submit" id="submit">Submit</button>
+                        </div>
+                        
+                    </div>
+                </form>
+            </div>
+        </div>
+
+            <div class="container-fluid footer-color text-light footer pt-5 wow fadeIn" data-wow-delay="0.1s" style="margin-top: 6rem;">
+                <div class="container py-5">
+                    <div class="row g-5">
+                        <div class="col-lg-3 col-md-6">
+                            <h4 class="text-light mb-4">Contato</h4>
+                            <p class="mb-2"><i class="fa fa-envelope me-3"></i>rotaract4500@gmail.com</p>
+                            <div class="d-flex pt-2">
+                                <a class="btn btn-outline-light btn-social" href="https://twitter.com/Rotaract4500"><i class="fab fa-twitter"></i></a>
+                                <a class="btn btn-outline-light btn-social" href="https://pt-br.facebook.com/pg/rotaract4500/posts/"><i class="fab fa-facebook-f"></i></a>
+                                <a class="btn btn-outline-light btn-social" href="https://www.youtube.com/c/Rotaract4500"><i class="fab fa-youtube"></i></a>
+                                <a class="btn btn-outline-light btn-social" href="https://instagram.com/rotaract4500"><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6">
+                            <h4 class="text-light mb-4">ÁREAS</h4>
+                            <a class="btn btn-link" href="">RDA e Clubes - Área I</a>
+                            <a class="btn btn-link" href="">RDA e Clubes - Área II</a>
+                            <a class="btn btn-link" href="">RDA e Clubes - Área III</a>
+                            <a class="btn btn-link" href="">RDA e Clubes - Área IV</a>
+                            <a class="btn btn-link" href="">RDA e Clubes - Área V</a>
+                            <a class="btn btn-link" href="">RDA e Clubes - Área VI</a>
+                        </div>
+                        <div class="col-lg-3 col-md-6">
+                            <h4 class="text-light mb-4">MeuCaloroso</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="copyright">
+                        <div class="row">
+                            <div class="col-md-6 text-center text-md-start mb-12 mb-md-12">
+                                Copyright &copy; <a class="border-bottom" href="#">Rotaract 4500</a> - Todos os direitos reservados.
+                            </div>
+                            <div class="col-md-6 text-center text-md-end">
+                                Sonhar para Florescer,
+                                </br>Gestão 2022/2023
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Footer End -->
+        <!-- Back to Top -->
+        <a href="#" class="btn btn-lg btn-warning text-light btn-lg-square rounded-0 back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+
+        <!-- JavaScript Libraries -->
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="lib/wow/wow.min.js"></script>
+        <script src="lib/easing/easing.min.js"></script>
+        <script src="lib/waypoints/waypoints.min.js"></script>
+        <script src="lib/counterup/counterup.min.js"></script>
+        <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-firestore.js"></script>
+        <script src="main.js"></script>
+
+        <!-- Template Javascript -->
+        <script src="js/main.js"></script>
+    </body>
+
+</html>
