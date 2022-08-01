@@ -1,3 +1,4 @@
+
 (function ($) {
   "use strict";
 
@@ -77,7 +78,6 @@
     ],
   });
 })(jQuery);
-
 //Unique Firebase Object
 var firebaseConfig = {
   apiKey: "AIzaSyAkhTtORnvWoZCOUIvgzC_yAj5azjbuykU",
