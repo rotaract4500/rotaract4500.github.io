@@ -92,7 +92,7 @@ var firebaseConfig = {
   projectId: "r4500-f2513",
   storageBucket: "r4500-f2513.appspot.com",
   messagingSenderId: "355568894424",
-  appId: "1:355568894424:web:be8b16b0c0d98c9445b2ad"
+  appId: "1:355568894424:web:45303faab5f0ea8245b2ad"
 };
 
 //Initialize Firebase
