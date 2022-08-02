@@ -181,6 +181,11 @@ submitButton.addEventListener("click", (e) => {
     return;
   }
   //Alerta - Presidência == ""
+  if (!presidencia_palavras_diretor) {
+    alert("Por favor, preencha o campo (Presidência).");
+    return;
+  }
+
   if (!presidencia_myrotary_atualizado) {
     alert("Por favor, preencha o campo (Presidência).");
     return;
@@ -256,7 +261,7 @@ submitButton.addEventListener("click", (e) => {
     return;
   }
   //Alerta - Administracao Meta Cumprida == ""
-  if (!Administracao_meta_cumprida) {
+  if (!administracao_meta_cumprida) {
     alert("Por favor, preencha o campo (Administracao Meta Cumprida).");
     return;
   }
