@@ -74,17 +74,8 @@ submitButton.addEventListener("click", (e) => {
   let administracao_palavras_diretor = document.getElementById(
     "Administracao_palavras_diretor"
   ).value;
-  let administracao_numero_reunioes = document.getElementById(
-    "Administracao_numero_reunioes"
-  ).value;
-  let administracao_frequencia_mensal = document.getElementById(
-    "Administracao_frequencia_mensal"
-  ).value;
-  let administracao_porcentagem_frequencia_baixa = document.getElementById(
-    "Administracao_porcentagem_frequencia_baixa"
-  ).value;
-  let administracao_companheirismos = document.getElementById(
-    "Administracao_companheirismos"
+  let administracao_meta_cumprida = document.getElementById(
+    "Administracao_meta_cumprida"
   ).value;
 
   //DQA
@@ -160,33 +151,7 @@ submitButton.addEventListener("click", (e) => {
   let presidencia_myrotary_atualizado = document.getElementById(
     "Presidencia_myrotary_atualizado"
   ).value;
-  let presidencia_impressoes_trabalho_secretaria = document.getElementById(
-    "Presidencia_impressoes_trabalho_secretaria"
-  ).value;
-  let presidencia_impressoes_trabalho_tesouraria = document.getElementById(
-    "Presidencia_impressoes_trabalho_tesouraria"
-  ).value;
-  let presidencia_impressoes_trabalho_administracao = document.getElementById(
-    "Presidencia_impressoes_trabalho_administracao"
-  ).value;
-  let presidencia_impressoes_trabalho_dqa = document.getElementById(
-    "Presidencia_impressoes_trabalho_dqa"
-  ).value;
-  let presidencia_impressoes_trabalho_ip = document.getElementById(
-    "Presidencia_impressoes_trabalho_ip"
-  ).value;
-  let presidencia_impressoes_trabalho_ph = document.getElementById(
-    "Presidencia_impressoes_trabalho_ph"
-  ).value;
-  let presidencia_impressoes_trabalho_fr = document.getElementById(
-    "Presidencia_impressoes_trabalho_fr"
-  ).value;
-  let presidencia_impressoes_trabalho_ri = document.getElementById(
-    "Presidencia_impressoes_trabalho_ri"
-  ).value;
-  let presidencia_impressoes_trabalho_distrito = document.getElementById(
-    "Presidencia_impressoes_trabalho_distrito"
-  ).value;
+
 
   //**************************************
 
@@ -229,7 +194,7 @@ submitButton.addEventListener("click", (e) => {
       });
     });
   //Salva os dados do formulário para o Firebase
-    
+
   db.doc()
     .set({
       Data_envio: date.getDate(),
@@ -241,10 +206,8 @@ submitButton.addEventListener("click", (e) => {
       //SECRETARIA
       Secretaria_descricao_atividades: secretaria_descricao_atividades, //tipo: textarea
       Secretaria_palavras_diretor: secretaria_palavras_diretor, //tipo: textarea
-      Secretaria_numero_atas_confeccionadas:
-        secretaria_numero_atas_confeccionadas, //tipo: input/number
-      Secretaria_percentual_diretores_relatorios:
-        secretaria_percentual_diretores_relatorios, //tipo: input/text
+      Secretaria_numero_atas_confeccionadas: secretaria_numero_atas_confeccionadas, //tipo: input/number
+      Secretaria_percentual_diretores_relatorios: secretaria_percentual_diretores_relatorios, //tipo: input/text
       Secretaria_cadastro_mdio_atualizado: secretaria_cadastro_mdio_atualizado, //tipo: textarea
 
       //TESOURARIA
@@ -258,11 +221,7 @@ submitButton.addEventListener("click", (e) => {
       //ADMINISTRAÇÃO
       Administracao_descricao_atividades: administracao_descricao_atividades, //tipo: textarea
       Administracao_palavras_diretor: administracao_palavras_diretor, //tipo: textarea
-      Administracao_numero_reunioes: administracao_numero_reunioes, //tipo: input/number
-      Administracao_frequencia_mensal: administracao_frequencia_mensal, //tipo: input/number
-      Administracao_porcentagem_frequencia_baixa:
-        administracao_porcentagem_frequencia_baixa, //tipo: input/number
-      Administracao_companheirismos: administracao_companheirismos, //tipo: textarea
+      Administracao_meta_cumprida: administracao_meta_cumprida, //tipo: input/textarea
 
       //DQA
       Dqa_descricao_atividades: dqa_descricao_atividades, //tipo: textarea
@@ -298,19 +257,7 @@ submitButton.addEventListener("click", (e) => {
       // PRESI
       Presidencia_palavras_diretor: presidencia_palavras_diretor, //tipo: textarea
       Presidencia_myrotary_atualizado: presidencia_myrotary_atualizado, //tipo: textarea
-      Presidencia_impressoes_trabalho_secretaria:
-        presidencia_impressoes_trabalho_secretaria, //tipo: textarea
-      Presidencia_impressoes_trabalho_tesouraria:
-        presidencia_impressoes_trabalho_tesouraria, //tipo: textarea
-      Presidencia_impressoes_trabalho_administracao:
-        presidencia_impressoes_trabalho_administracao, //tipo: textarea
-      Presidencia_impressoes_trabalho_dqa: presidencia_impressoes_trabalho_dqa, //tipo: textarea
-      Presidencia_impressoes_trabalho_ip: presidencia_impressoes_trabalho_ip, //tipo: textarea
-      Presidencia_impressoes_trabalho_ph: presidencia_impressoes_trabalho_ph, //tipo: textarea
-      Presidencia_impressoes_trabalho_fr: presidencia_impressoes_trabalho_fr, //tipo: textarea
-      Presidencia_impressoes_trabalho_ri: presidencia_impressoes_trabalho_ri, //tipo: textarea
-      Presidencia_impressoes_trabalho_distrito:
-        presidencia_impressoes_trabalho_distrito, //tipo: textarea
+
     })
     .then(() => {})
     .catch((error) => {
