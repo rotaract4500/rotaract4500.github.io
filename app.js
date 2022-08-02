@@ -180,7 +180,176 @@ submitButton.addEventListener("click", (e) => {
     alert("Por favor, preencha o campo (Mês do relatório).");
     return;
   }
-
+  //Alerta - Presidência == ""
+  if (!presidencia_myrotary_atualizado) {
+    alert("Por favor, preencha o campo (Presidência).");
+    return;
+  }
+  //Alerta - Vice-presidência == ""
+  if (!vicep_palavras_diretor) {
+    alert("Por favor, preencha o campo (Vice-presidência).");
+    return;
+  }
+   //Alerta - Secretaria Descricao Atividades == ""
+   if (!secretaria_descricao_atividades) {
+    alert("Por favor, preencha o campo (Secretaria Descricao Atividades).");
+    return;
+  }
+   //Alerta - Secretaria Palavras Diretor == ""
+   if (!secretaria_palavras_diretor) {
+    alert("Por favor, preencha o campo (Secretaria Palavras Diretor).");
+    return;
+  }
+  //Alerta - Secretaria Numero Atas Confeccionadas == ""
+  if (!secretaria_numero_atas_confeccionadas) {
+    alert("Por favor, preencha o campo (Secretaria Numero Atas Confeccionadas).");
+    return;
+  }
+  //Alerta - Secretaria Percentual Diretores Relatorios == ""
+  if (!secretaria_percentual_diretores_relatorios) {
+    alert("Por favor, preencha o campo (Secretaria Percentual Diretores Relatorios).");
+    return;
+  }
+  //Alerta - Secretaria Cadastro Mdio Atualizado == ""
+  if (!secretaria_cadastro_mdio_atualizado) {
+    alert("Por favor, preencha o campo (Secretaria Cadastro Mdio Atualizado).");
+    return;
+  }
+  //Alerta - Tesouraria Descricao Atividades == ""
+  if (!tesouraria_descricao_atividades) {
+    alert("Por favor, preencha o campo (Tesouraria Descricao Atividades).");
+    return;
+  }
+  //Alerta - Tesouraria Palavras Diretor == ""
+  if (!tesouraria_palavras_diretor) {
+    alert("Por favor, preencha o campo (Tesouraria Palavras Diretor).");
+    return;
+  }
+  //Alerta - Tesouraria Entradas == ""
+  if (!tesouraria_entradas) {
+    alert("Por favor, preencha o campo (Tesouraria Entradas).");
+    return;
+  }
+  //Alerta - Tesouraria Saidas == ""
+  if (!tesouraria_saidas) {
+    alert("Por favor, preencha o campo (Tesouraria Saidas).");
+    return;
+  }
+  //Alerta - Tesouraria Saldo Obtido Mes == ""
+  if (!tesouraria_saldo_obtido_mes) {
+    alert("Por favor, preencha o campo (Tesouraria Saldo Obtido Mes).");
+    return;
+  }
+  //Alerta - Tesouraria Link Drive Comprovantes == ""
+  if (!tesouraria_link_drive_comprovantes) {
+    alert("Por favor, preencha o campo (Tesouraria Link Drive Comprovantes).");
+    return;
+  }
+  //Alerta - Administracao Descricao Atividades == ""
+  if (!administracao_descricao_atividades) {
+    alert("Por favor, preencha o campo (Administracao Descricao Atividades).");
+    return;
+  }
+  //Alerta - Administracao Palavras Diretor == ""
+  if (!administracao_palavras_diretor) {
+    alert("Por favor, preencha o campo (Administracao Palavras Diretor).");
+    return;
+  }
+  //Alerta - Administracao Meta Cumprida == ""
+  if (!Administracao_meta_cumprida) {
+    alert("Por favor, preencha o campo (Administracao Meta Cumprida).");
+    return;
+  }
+  //Alerta - Dqa Descricao Atividades == ""
+  if (!dqa_descricao_atividades) {
+    alert("Por favor, preencha o campo (Desenvolvimento do Quadro Associativo  Descricao Atividades).");
+    return;
+  }
+  //Alerta - Dqa Palavras Diretor == ""
+  if (!dqa_palavras_diretor) {
+    alert("Por favor, preencha o campo (Desenvolvimento do Quadro Associativo  Palavras Diretor).");
+    return;
+  }
+  //Alerta - Dqa Associados Afastados == ""
+  if (!dqa_associados_afastados) {
+    alert("Por favor, preencha o campo (Desenvolvimento do Quadro Associativo  Associados Afastados).");
+    return;
+  }
+  //Alerta - Dqa Empossados Mes == ""
+  if (!dqa_empossados_mes) {
+    alert("Por favor, preencha o campo (Desenvolvimento do Quadro Associativo  Empossados Mes).");
+    return;
+  }
+  //Alerta - Dqa Afastados Mes == ""
+  if (!dqa_afastados_mes) {
+    alert("Por favor, preencha o campo (Desenvolvimento do Quadro Associativo  Afastados Mes).");
+    return;
+  }
+  //Alerta - Dqa Associados Desligados == ""
+  if (!dqa_associados_desligados) {
+    alert("Por favor, preencha o campo (Desenvolvimento do Quadro Associativo  Associados Desligados).");
+    return;
+  }
+  //Alerta - Dqa Numero Associados == ""
+  if (!dqa_numero_associados) {
+    alert("Por favor, preencha o campo (Desenvolvimento do Quadro Associativo Numero Associados).");
+    return;
+  }
+  //Alerta - Ip Descricao Atividades == ""
+  if (!ip_descricao_atividades) {
+    alert("Por favor, preencha o campo (Imagem Pública Descricao Atividades).");
+    return;
+  }
+  //Alerta - Ip Palavras Diretor == ""
+  if (!ip_palavras_diretor) {
+    alert("Por favor, preencha o campo (Imagem Pública Palavras Diretor).");
+    return;
+  }
+  //Alerta - Ip Links Importantes == ""
+  if (!ip_links_importantes) {
+    alert("Por favor, preencha o campo (Imagem Pública Links Importantes).");
+    return;
+  }
+  //Alerta - Projetos Humanitários Descricao Atividades == ""
+  if (!ph_descricao_atividades) {
+    alert("Por favor, preencha o campo (Projetos Humanitários Descricao Atividades).");
+    return;
+  }
+  //Alerta - Projetos Humanitários Palavras Diretor == ""
+  if (!ph_palavras_diretor) {
+    alert("Por favor, preencha o campo (Projetos Humanitários Palavras Diretor).");
+    return;
+  }
+  //Alerta - Projetos Humanitários Planejamento Mes Seguinte == ""
+  if (!ph_planejamento_mes_seguinte) {
+    alert("Por favor, preencha o campo (Projetos Humanitários Planejamento Mes Seguinte).");
+    return;
+  }
+  //Alerta - Fr Descricao Atividades == ""
+  if (!fr_descricao_atividades) {
+    alert("Por favor, preencha o campo (Fundação Rotária Descricao Atividades).");
+    return;
+  }
+  //Alerta - Fr Palavras Diretor == ""
+  if (!fr_palavras_diretor) {
+    alert("Por favor, preencha o campo (Fundação Rotária Palavras Diretor).");
+    return;
+  }
+  //Alerta - Fr Tema Relacionado No Mes == ""
+  if (!fr_tema_relacionado_no_mes) {
+    alert("Por favor, preencha o campo (Fundação Rotária Tema Relacionado No Mes).");
+    return;
+  }
+  //Alerta - Ri Descricao Atividades == ""
+  if (!ri_descricao_atividades) {
+    alert("Por favor, preencha o campo (Relações Internacionais Descricao Atividades).");
+    return;
+  }
+  //Alerta - Ri Palavras Diretor == ""
+  if (!ri_palavras_diretor) {
+    alert("Por favor, preencha o campo (Relações Internacionais Palavras Diretor).");
+    return;
+  }
   firestore
     .collection("TESTE")
     .get()
