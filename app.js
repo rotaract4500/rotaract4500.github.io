@@ -128,6 +128,14 @@ submitButton.addEventListener("click", (e) => {
     "Ri_palavras_diretor"
   ).value;
 
+  //DEI
+  let dei_descricao_atividades = document.getElementById(
+    "Dei_descricao_atividades"
+  ).value;
+  let dei_palavras_diretor = document.getElementById(
+    "Dei_palavras_diretor"
+  ).value;
+
   //FR
   let fr_descricao_atividades = document.getElementById(
     "Fr_descricao_atividades"
@@ -355,6 +363,17 @@ submitButton.addEventListener("click", (e) => {
     alert("Por favor, preencha o campo (Relações Internacionais Palavras Diretor).");
     return;
   }
+  //Alerta - dei Descricao Atividades == ""
+  if (!dei_descricao_atividades) {
+    alert("Por favor, preencha o campo (Relações Internacionais Descricao Atividades).");
+    return;
+  }
+  //Alerta - dei Palavras Diretor == ""
+  if (!dei_palavras_diretor) {
+    alert("Por favor, preencha o campo (Relações Internacionais Palavras Diretor).");
+    return;
+  }
+
   firestore
     .collection("TESTE")
     .get()
@@ -424,6 +443,10 @@ submitButton.addEventListener("click", (e) => {
       //RI
       Ri_descricao_atividades: ri_descricao_atividades, //tipo: textarea
       Ri_palavras_diretor: ri_palavras_diretor, //tipo: textarea
+
+      //DEI
+      Dei_descricao_atividades: dei_descricao_atividades, //tipo: textarea
+      Dei_palavras_diretor: dei_palavras_diretor, //tipo: textarea
 
       //VICEP
       Vicep_palavras_diretor: vicep_palavras_diretor, //tipo: textarea
