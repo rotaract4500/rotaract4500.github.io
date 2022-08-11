@@ -384,7 +384,7 @@ submitButton.addEventListener("click", (e) => {
 
   db.doc()
     .set({
-      Data_envio: date.getDate + "-" + date.getMonth + "-" + date.getFullYear,
+      Data_envio: date.getDate() + "-" + date.getMonth() + "-" + date.getFullYear(),
       Clube: clube, //tipo: input/text
       Cidade: cidade, //tipo: input/text
       Estado: estado, //tipo: select
