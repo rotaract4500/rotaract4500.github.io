@@ -92,7 +92,6 @@ submitButton.addEventListener("click", (e) => {
     "Dqa_associados_afastados"
   ).value;
   let dqa_empossados_mes = document.getElementById("Dqa_empossados_mes").value;
-  let dqa_afastados_mes = document.getElementById("Dqa_afastados_mes").value;
   let dqa_associados_desligados = document.getElementById(
     "Dqa_associados_desligados"
   ).value;
@@ -293,11 +292,6 @@ submitButton.addEventListener("click", (e) => {
     alert("Por favor, preencha o campo (Desenvolvimento do Quadro Associativo  Empossados Mes).");
     return;
   }
-  //Alerta - Dqa Afastados Mes == ""
-  if (!dqa_afastados_mes) {
-    alert("Por favor, preencha o campo (Desenvolvimento do Quadro Associativo  Afastados Mes).");
-    return;
-  }
   //Alerta - Dqa Associados Desligados == ""
   if (!dqa_associados_desligados) {
     alert("Por favor, preencha o campo (Desenvolvimento do Quadro Associativo  Associados Desligados).");
@@ -390,7 +384,7 @@ submitButton.addEventListener("click", (e) => {
 
   db.doc()
     .set({
-      Data_envio: date.getDate(),
+      Data_envio: date.getDate + "-" + date.getMonth + "-" + date.getFullYear,
       Clube: clube, //tipo: input/text
       Cidade: cidade, //tipo: input/text
       Estado: estado, //tipo: select
@@ -422,7 +416,6 @@ submitButton.addEventListener("click", (e) => {
       Dqa_numero_associados: dqa_numero_associados, //tipo: input/number
       Dqa_associados_afastados: dqa_associados_afastados, //tipo: textarea
       Dqa_empossados_mes: dqa_empossados_mes, //tipo: textarea
-      Dqa_afastados_mes: dqa_afastados_mes, //tipo: textarea
       Dqa_associados_desligados: dqa_associados_desligados, //tipo: textarea
 
       //IP
