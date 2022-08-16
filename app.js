@@ -461,5 +461,17 @@ submitButton.addEventListener("click", (e) => {
   function clearForm() {
     document.getElementById("clearFrom").reset();
   }
+  
+  pegarDados();
+
+  function pegarDados() {
+    firebase.firestore().collection('TESTE')
+    .get()
+    .then(snapshot => {
+      const TESTE = snapshot.map(doc => doc.Clube());
+      addTeste(TESTE)
+    });
+  }
+
   clearForm();
 });
