@@ -457,21 +457,14 @@ submitButton.addEventListener("click", (e) => {
   //Alerta - Submissão Aceita
   alert("Relatório enviado com sucesso!");
 
+    
+
   //clear form after submission
   function clearForm() {
     document.getElementById("clearFrom").reset();
   }
+
   
-  pegarDados();
-
-  function pegarDados() {
-    firebase.firestore().collection('TESTE')
-    .get()
-    .then(snapshot => {
-      const TESTE = snapshot.map(doc => doc.Clube());
-      addTeste(TESTE)
-    });
-  }
-
+  
   clearForm();
 });
