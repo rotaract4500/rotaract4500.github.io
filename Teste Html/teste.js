@@ -16,16 +16,34 @@ const db = firebase.firestore();
 db.collection('TESTE').get()
     .then(snapshot => {
     const testeLi = snapshot.docs.reduce((acc,doc) => {
-        const {Clube, Estado, Cidade} = doc.data()
-            acc += `<li class = "my-4">
-            <h5>${Clube}</h5>
-
-            <ul>
-                <li>Desenvolvido por ${Estado}</li>
-                <li>Adicionando no banco em ${Cidade}</li>
-            </ul>
+        const {Clube, Cidade, Mes_relatorio} = doc.data()
+            acc += `<table class = "table table-striped">
+            <thead>
+            <tr>
+                <th>Clube</th>
+                <th>Cidade</th>
+                <th>Mês do Relatório</th>
+                <th>Status</th>
+                <th>Ações</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>${Clube}</td>
+                <td>${Cidade}</td>
+                <td>${Mes_relatorio}</td>
+                <td><a href="#" class="btn btn-danger"> Incompleto </a></td>
+                <td> 
+                    <div>
+                        <a href="ViewRelatorio/view_relatorio.html">
+                            <input class="btn btn-light" type="button" value="Visualizar" >
+                        </a>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
             
-            </li>`
+            </table>`
             return acc
         }, '')
         testeLii.innerHTML = testeLi
@@ -33,5 +51,10 @@ db.collection('TESTE').get()
     .catch(err =>{
         console.log(err.message);
     })
+
+
+
+
+
 
 
