@@ -1,4 +1,5 @@
 const testeLii = document.querySelector('[data-js="games-list"]')
+//const citiesRef = collection(db);
 var firebaseConfig = {
   apiKey: "AIzaSyAkhTtORnvWoZCOUIvgzC_yAj5azjbuykU",
   authDomain: "r4500-f2513.firebaseapp.com",
@@ -11,12 +12,20 @@ var firebaseConfig = {
 //Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 const db = firebase.firestore();
+    function update() {
+    var select = document.getElementById('Clube');
+    var value = select.options[select.selectedIndex].value;
 
+    console.log(value)
+ }
+  update();
 
 db.collection('TESTE').get()
     .then(snapshot => {
+    //const q = query(citiesRef, where("Clube", "==", value), orderBy("Mes_relatorio"))
     const testeLi = snapshot.docs.reduce((acc,doc) => {
         const {Clube, Cidade, Mes_relatorio} = doc.data()
+        
             acc += `<table class = "table table-striped">
             <thead>
             <tr>
@@ -52,7 +61,7 @@ db.collection('TESTE').get()
         console.log(err.message);
     })
 
-
+    
 
 
 

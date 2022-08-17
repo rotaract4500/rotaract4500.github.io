@@ -84,7 +84,7 @@
                 <div class="row g-3">
                     <h5 class="text-dark">Filtrar dados</h5>
                     <div class="col-12">
-                        <select class="form-select border-0" style="height: 55px;" id="Clube" name="clube" required>
+                      <select onChange="update()" class="form-select border-0" style="height: 55px;" id="Clube" name="clube" required>
                             <option disabled selected value="">Selecione seu Clube</option>
                                         <option value="Águas Belas">Águas Belas</option>
                                         <option value="Aldeia Anjos Kairós">Aldeia Anjos Kairós</option>
@@ -126,6 +126,7 @@
                                         <option value="Tenente Ananias">Tenente Ananias</option>
                                         <option value="Universitários Natal Sul">Universitários Natal Sul</option>
                         </select>
+                   
                     </div>
                     <ul data-js="games-list"></ul>
                 </div>
