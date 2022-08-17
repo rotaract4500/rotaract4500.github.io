@@ -12,11 +12,12 @@ var firebaseConfig = {
 //Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 const db = firebase.firestore();
-    function update() {
-    var select = document.getElementById('Clube');
-    var value = select.options[select.selectedIndex].value;
 
-    console.log(value)
+function update() {
+var select = document.getElementById('Clube');
+var value = select.options[select.selectedIndex].value;
+
+console.log(value)
  }
   update();
 
