@@ -1,4 +1,7 @@
-const testeLii = document.querySelector('[data-js="games-list"]')
+import { getFirestore, doc, getDoc, getDocs, collection, query, where } from "https://www.gstatic.com/firebasejs/9.4.0/firebase-firestore.js";
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.4.0/firebase-app.js";
+
+const relatorio = document.querySelector('[data-js="relatorio"]');
 var firebaseConfig = {
   apiKey: "AIzaSyAkhTtORnvWoZCOUIvgzC_yAj5azjbuykU",
   authDomain: "r4500-f2513.firebaseapp.com",
@@ -10,12 +13,15 @@ var firebaseConfig = {
 
 //Initialize Firebase
 firebase.initializeApp(firebaseConfig);
+const app2 = initializeApp(firebaseConfig);
 const db = firebase.firestore();
+const datab = getFirestore(app2);
+var tela = "Araripina";
 
 
-db.collection('TESTE').get()
-    .then(snapshot => {
-    const testeLi = snapshot.docs.reduce((acc,doc) => {
+function setRelatorio(){
+    const q = query(collection(datab, "TESTE"), where("Clube", "==", "Caruaru"));
+    getDocs(q).then(querySnapshot => querySnapshot.forEach((doc, acc) => {
         const {
             Clube,
             Cidade,
@@ -361,18 +367,13 @@ db.collection('TESTE').get()
                     <p> ${Dei_palavras_diretor} </p>
                 </div>
             </div>
-
-
         </div>
         </form>`
-            return acc
-        }, '')
-        testeLii.innerHTML = testeLi
-    })
-    .catch(err =>{
-        console.log(err.message);
-    })
+        relatorio.innerHTML = acc;
+        return acc
+    }, ''))    
+}
+    
 
-
-
+document.ready(setRelatorio());
 

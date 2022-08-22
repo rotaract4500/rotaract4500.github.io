@@ -84,8 +84,8 @@
                 <div class="row g-3">
                     <h5 class="text-dark">Filtrar dados</h5>
                     <div class="col-12">
-                      <select onChange="update()" class="form-select border-0" style="height: 55px;" id="Clube" name="clube" required>
-                            <option disabled selected value="">Selecione seu Clube</option>
+                      <select onChange="update(value)" class="form-select border-0" style="height: 55px;" id="Clube" name="clube" required>
+                                        <option selected value="todos">Todos</option> 
                                         <option value="Águas Belas">Águas Belas</option>
                                         <option value="Aldeia Anjos Kairós">Aldeia Anjos Kairós</option>
                                         <option value="Araripina">Araripina</option>
@@ -217,7 +217,13 @@
     <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-firestore.js"></script>
 
     <!-- Template Javascript -->
-    <script src="Feedback.js"></script>
+    <script type="module" src="Feedback.js">
+
+    </script>
+    <script type="module">
+      import {update} from "./Feedback.js";
+      window.update = update;
+    </script>
   </body>
 
 </html>
