@@ -51,7 +51,7 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/9.4.0/firebase
                 <td>${Cidade}</td>
                 <td>${Mes_relatorio}</td>
                 <td> 
-                    <button class="btn btn-light" name="visualizar" value="${Clube}" onclick="getValue(this) && changePage()">Visualizar</button>
+                    <button class="btn btn-light" type="button" name="visualizar" value="${Clube}" onclick="getValue(this) && changePage()">Visualizar</button>
                 </td>
             </tr>
             </tbody>
