@@ -126,22 +126,10 @@
                                         <option value="Tenente Ananias">Tenente Ananias</option>
                                         <option value="Universitários Natal Sul">Universitários Natal Sul</option>
                         </select>
-                   
                     </div>
                     <ul data-js="games-list"></ul>
                 </div>
             </form>
-            <section class="ftco-section">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="table-wrap">
-                              <table data-js="games-list"> </table>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
         </div>
     </div>
  
@@ -223,6 +211,14 @@
     <script type="module">
       import {update} from "./Feedback.js";
       window.update = update;
+    </script>
+    <script type="module">
+      import {getValue} from "./value.js";
+      window.getValue = getValue;
+    </script>
+    <script type="module">
+      import {changePage} from "./value.js";
+      window.changePage = changePage;
     </script>
   </body>
 

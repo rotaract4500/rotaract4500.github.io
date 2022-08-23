@@ -1,6 +1,8 @@
 import { getFirestore, doc, getDoc, getDocs, collection, query, where } from "https://www.gstatic.com/firebasejs/9.4.0/firebase-firestore.js";
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.4.0/firebase-app.js";
 
+
+
 const relatorio = document.querySelector('[data-js="relatorio"]');
 var firebaseConfig = {
   apiKey: "AIzaSyAkhTtORnvWoZCOUIvgzC_yAj5azjbuykU",
@@ -16,11 +18,12 @@ firebase.initializeApp(firebaseConfig);
 const app2 = initializeApp(firebaseConfig);
 const db = firebase.firestore();
 const datab = getFirestore(app2);
-var tela = "Araripina";
 
+let tela = localStorage.getItem('clube');
+console.log(tela);
 
-function setRelatorio(){
-    const q = query(collection(datab, "TESTE"), where("Clube", "==", "Caruaru"));
+window.onload = function (){
+    const q = query(collection(datab, "TESTE"), where("Clube", "==", tela));
     getDocs(q).then(querySnapshot => querySnapshot.forEach((doc, acc) => {
         const {
             Clube,
@@ -370,10 +373,9 @@ function setRelatorio(){
         </div>
         </form>`
         relatorio.innerHTML = acc;
+        localStorage.clear();
         return acc
     }, ''))    
 }
-    
 
-document.ready(setRelatorio());
 

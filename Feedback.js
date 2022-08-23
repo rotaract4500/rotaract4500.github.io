@@ -51,9 +51,7 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/9.4.0/firebase
                 <td>${Cidade}</td>
                 <td>${Mes_relatorio}</td>
                 <td> 
-                <a href="ViewRelatorio/view_relatorio.html">
-                    <input class="btn btn-light" type="button" value="Visualizar" >
-                </a>
+                    <button class="btn btn-light" name="visualizar" value="${Clube}" onclick="getValue(this) && changePage()">Visualizar</button>
                 </td>
             </tr>
             </tbody>
@@ -91,14 +89,11 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/9.4.0/firebase
                     <td>${Cidade}</td>
                     <td>${Mes_relatorio}</td>
                     <td> 
-                    <a href="ViewRelatorio/view_relatorio.html">
-                        <input class="btn btn-light" type="button" value="Visualizar" >
-                    </a>
+                    <button class="btn btn-light" type="button" name="visualizar" value="${Clube}" onclick="getValue(this) && changePage()">Visualizar</button>
                     </td>
                 </tr>
                 </tbody>
                 </table>
-                
                 `
                 return acc
             }, '')
@@ -109,11 +104,6 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/9.4.0/firebase
         })
     }
    started();
-
-   
-
-
-
 
 
 
