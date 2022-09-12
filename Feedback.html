@@ -84,7 +84,8 @@
                 <div class="row g-3">
                     <h5 class="text-dark">Filtrar dados</h5>
                     <div class="col-12">
-                      <select onChange="update(value)" class="form-select border-0" style="height: 55px;" id="Clube" name="clube" required>
+                      <span class="text-dark">Por Clube</span>
+                      <select onChange="update(value)" class="form-select border-0" style="height: 55px;" id="Clube" name="clube">
                                         <option selected value="todos">Todos</option> 
                                         <option value="Águas Belas">Águas Belas</option>
                                         <option value="Aldeia Anjos Kairós">Aldeia Anjos Kairós</option>
@@ -125,6 +126,24 @@
                                         <option value="Teixeira">Teixeira</option>
                                         <option value="Tenente Ananias">Tenente Ananias</option>
                                         <option value="Universitários Natal Sul">Universitários Natal Sul</option>
+                        </select>
+                    </div>
+                    <div class="col-12">
+                      <span class="text-dark">Por Mês</span>
+                      <select onChange="mesRelatorio(value)" class="form-select border-0" style="height: 55px;" id="Clube" name="clube">
+                                        <option selected value="todos">Todos</option> 
+                                        <option value="JANEIRO2023">Janeiro/2023</option>
+                                        <option value="FEVEREIRO2023">Fevereiro/2023</option>
+                                        <option value="MARCO2023">Março/2023</option>
+                                        <option value="ABRIL2023">Abril/2023</option>
+                                        <option value="MAIO2023">Maio/2023</option>
+                                        <option value="JUNHO2023">Junho/2023</option>
+                                        <option value="JULHO2022">Julho/2022</option>
+                                        <option value="AGOSTO2022">Agosto/2022</option>
+                                        <option value="SETEMBRO2022">Setembro/2022</option>
+                                        <option value="OUTUBRO2022">Outubro/2022</option>
+                                        <option value="NOVEMBRO2022">Novembro/2022</option>
+                                        <option value="DEZEMBRO2022">Dezembro/2022</option>
                         </select>
                     </div>
                     <ul data-js="games-list"></ul>
@@ -209,8 +228,9 @@
 
     </script>
     <script type="module">
-      import {update} from "./Feedback.js";
+      import {update, mesRelatorio} from "./Feedback.js";
       window.update = update;
+      window.mesRelatorio = mesRelatorio;
     </script>
     <script type="module">
       import {getValue} from "./value.js";
@@ -221,5 +241,4 @@
       window.changePage = changePage;
     </script>
   </body>
-
 </html>

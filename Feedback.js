@@ -28,38 +28,81 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/9.4.0/firebase
     export function update(value) {
         atualizarRelatorios(value);
     }
-       
     
+    export function mesRelatorio(mes){
+        atualizarRelatoriosPorMes(mes);
+    }
+    function atualizarRelatoriosPorMes(mes){
+        const q = query(collection(datab, "TESTE"), where("Mes_relatorio", "==", mes));
+        if(mes != "todos"){
+            getDocs(q).then(snapshot => {
+                const relatorios = snapshot.docs.reduce((acc,doc) => {
+                    const {Clube, Cidade, Mes_relatorio} = doc.data()
+                        acc += `<table class = "table table-striped">
+                        <thead>
+                        <tr>
+                            <th>Clube</th>
+                            <th>Cidade</th>
+                            <th>Mês do Relatório</th>
+                            <th>Ações</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>${Clube}</td>
+                            <td>${Cidade}</td>
+                            <td>${Mes_relatorio}</td>
+                            <td> 
+                            <button class="btn btn-light" type="button" name="visualizar" value="${Clube}" onclick="getValue(this) && changePage()">Visualizar</button>
+                            </td>
+                        </tr>
+                        </tbody>
+                        </table>
+                        `
+                        return acc
+                    }, '')
+                    listaRelatorios.innerHTML = relatorios;
+                })
+        }else{
+            started();
+        }
+        
+        
+    }
     
+
     function atualizarRelatorios(clube){
+        const q = query(collection(datab, "TESTE"), where("Clube", "==", clube));
         if(clube != "todos"){
-            const q = query(collection(datab, "TESTE"), where("Clube", "==", clube));
-            getDocs(q).then(querySnapshot => querySnapshot.forEach((doc, acc) => {
-            const {Clube, Cidade, Mes_relatorio} = doc.data()
-            acc += `<table class = "table table-striped">
-            <thead>
-            <tr>
-                <th>Clube</th>
-                <th>Cidade</th>
-                <th>Mês do Relatório</th>
-                <th>Ações</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr>
-                <td>${Clube}</td>
-                <td>${Cidade}</td>
-                <td>${Mes_relatorio}</td>
-                <td> 
-                    <button class="btn btn-light" type="button" name="visualizar" value="${Clube}" onclick="getValue(this) && changePage()">Visualizar</button>
-                </td>
-            </tr>
-            </tbody>
-            </table>
-            `
-            listaRelatorios.innerHTML = acc;
-            return acc
-        }, ''))
+            getDocs(q).then(snapshot => {
+                const relatorios = snapshot.docs.reduce((acc,doc) => {
+                    const {Clube, Cidade, Mes_relatorio} = doc.data()
+                    
+                        acc += `<table class = "table table-striped">
+                        <thead>
+                        <tr>
+                            <th>Clube</th>
+                            <th>Cidade</th>
+                            <th>Mês do Relatório</th>
+                            <th>Ações</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>${Clube}</td>
+                            <td>${Cidade}</td>
+                            <td>${Mes_relatorio}</td>
+                            <td> 
+                            <button class="btn btn-light" type="button" name="visualizar" value="${Clube}" onclick="getValue(this) && changePage()">Visualizar</button>
+                            </td>
+                        </tr>
+                        </tbody>
+                        </table>
+                        `
+                        return acc
+                    }, '')
+                    listaRelatorios.innerHTML = relatorios;
+                })
         }else{
             started();
         }
