@@ -8,7 +8,6 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/9.4.0/firebase
 
     const listaRelatorios = document.querySelector('[data-js="games-list"]')
 
-    
     const firebaseConfig = {
       apiKey: "AIzaSyAkhTtORnvWoZCOUIvgzC_yAj5azjbuykU",
       authDomain: "r4500-f2513.firebaseapp.com",
@@ -26,121 +25,118 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/9.4.0/firebase
     
     
     export function update(value) {
-        atualizarRelatorios(value);
+        if(value != "todos"){
+            atualizarRelatorios(value);
+        }else{
+            started();
+        }
     }
     
     export function mesRelatorio(mes){
-        atualizarRelatoriosPorMes(mes);
-    }
-    function atualizarRelatoriosPorMes(mes){
-        const q = query(collection(datab, "TESTE"), where("Mes_relatorio", "==", mes));
         if(mes != "todos"){
-            getDocs(q).then(snapshot => {
-                const relatorios = snapshot.docs.reduce((acc,doc) => {
-                    const {Clube, Cidade, Mes_relatorio} = doc.data()
-                        acc += `<table class = "table table-striped">
-                        <thead>
-                        <tr>
-                            <th>Clube</th>
-                            <th>Cidade</th>
-                            <th>Mês do Relatório</th>
-                            <th>Ações</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <tr>
-                            <td>${Clube}</td>
-                            <td>${Cidade}</td>
-                            <td>${Mes_relatorio}</td>
-                            <td> 
-                            <button class="btn btn-light" type="button" name="visualizar" value="${Clube}" onclick="getValue(this) && changePage()">Visualizar</button>
-                            </td>
-                        </tr>
-                        </tbody>
-                        </table>
-                        `
-                        return acc
-                    }, '')
-                    listaRelatorios.innerHTML = relatorios;
-                })
+            atualizarRelatoriosPorMes(mes);
         }else{
             started();
         }
-        
-        
     }
-    
+
+    function atualizarRelatoriosPorMes(mes){
+        const q = query(collection(datab, "TESTE"), where("Mes_relatorio", "==", mes));
+        let acc;
+        getDocs(q).then(querySnapshot => {
+            querySnapshot.forEach((doc) => {
+            const {Clube, Cidade, Mes_relatorio} = doc.data();
+            const key = doc.id;
+            acc += `<table class = "table table-striped">
+            <thead>
+            <tr>
+                <th>Clube</th>
+                <th>Cidade</th>
+                <th>Mês do Relatório</th>
+                <th>Ações</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>${Clube}</td>
+                <td>${Cidade}</td>
+                <td>${Mes_relatorio}</td>
+                <td> 
+                    <button class="btn btn-light" type="button" name="visualizar" value="${key}" onclick="getValue(this) && changePage()">Visualizar</button>
+                </td>
+            </tr>
+            </tbody>
+            </table>
+            `
+          }, '')
+          listaRelatorios.innerHTML = acc;
+         } )     
+    }
 
     function atualizarRelatorios(clube){
         const q = query(collection(datab, "TESTE"), where("Clube", "==", clube));
-        if(clube != "todos"){
-            getDocs(q).then(snapshot => {
-                const relatorios = snapshot.docs.reduce((acc,doc) => {
-                    const {Clube, Cidade, Mes_relatorio} = doc.data()
-                    
-                        acc += `<table class = "table table-striped">
-                        <thead>
-                        <tr>
-                            <th>Clube</th>
-                            <th>Cidade</th>
-                            <th>Mês do Relatório</th>
-                            <th>Ações</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <tr>
-                            <td>${Clube}</td>
-                            <td>${Cidade}</td>
-                            <td>${Mes_relatorio}</td>
-                            <td> 
-                            <button class="btn btn-light" type="button" name="visualizar" value="${Clube}" onclick="getValue(this) && changePage()">Visualizar</button>
-                            </td>
-                        </tr>
-                        </tbody>
-                        </table>
-                        `
-                        return acc
-                    }, '')
-                    listaRelatorios.innerHTML = relatorios;
-                })
-        }else{
-            started();
-        }
-        
-        
+        let acc;
+        getDocs(q).then(querySnapshot => {
+            querySnapshot.forEach((doc) => {
+            const {Clube, Cidade, Mes_relatorio} = doc.data();
+            const key = doc.id;
+            acc += `<table class = "table table-striped">
+            <thead>
+            <tr>
+                <th>Clube</th>
+                <th>Cidade</th>
+                <th>Mês do Relatório</th>
+                <th>Ações</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>${Clube}</td>
+                <td>${Cidade}</td>
+                <td>${Mes_relatorio}</td>
+                <td> 
+                    <button class="btn btn-light" type="button" name="visualizar" value="${key}" onclick="getValue(this) && changePage()">Visualizar</button>
+                </td>
+            </tr>
+            </tbody>
+            </table>
+            `
+          }, '')
+          listaRelatorios.innerHTML = acc;
+         } )     
     }
-    
 
     function started(){
+        let acc;
         db.collection('TESTE').get()
         .then(snapshot => {
-        const relatorios = snapshot.docs.reduce((acc,doc) => {
-            const {Clube, Cidade, Mes_relatorio} = doc.data()
-            
-                acc += `<table class = "table table-striped">
-                <thead>
-                <tr>
-                    <th>Clube</th>
-                    <th>Cidade</th>
-                    <th>Mês do Relatório</th>
-                    <th>Ações</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <td>${Clube}</td>
-                    <td>${Cidade}</td>
-                    <td>${Mes_relatorio}</td>
-                    <td> 
-                    <button class="btn btn-light" type="button" name="visualizar" value="${Clube}" onclick="getValue(this) && changePage()">Visualizar</button>
-                    </td>
-                </tr>
-                </tbody>
-                </table>
-                `
-                return acc
-            }, '')
-            listaRelatorios.innerHTML = relatorios;
+            snapshot.forEach((doc) => {
+                    const {Clube, Cidade, Mes_relatorio} = doc.data();
+                    const key = doc.id;
+                    acc += `<table class = "table table-striped">
+                    <thead>
+                    <tr>
+                        <th>Clube</th>
+                        <th>Cidade</th>
+                        <th>Mês do Relatório</th>
+                        <th>Ações</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>${Clube}</td>
+                        <td>${Cidade}</td>
+                        <td>${Mes_relatorio}</td>
+                        <td> 
+                        <button class="btn btn-light" type="button" name="visualizar" value="${key}" onclick="getValue(this) && changePage()">Visualizar</button>
+                        </td>
+                    </tr>
+                    </tbody>
+                    </table>
+                    `
+                    return acc
+        })
+            listaRelatorios.innerHTML = acc;
         })
         .catch(err =>{
             console.log(err.message);

@@ -1,7 +1,7 @@
 
    export function getValue(value){
-        let setClube = value.value;
-        localStorage.setItem('clube', setClube);
+        let setId = value.value;
+        localStorage.setItem('clube', setId);
         return true;
     }
 
